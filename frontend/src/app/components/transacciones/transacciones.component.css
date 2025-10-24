@@ -1,0 +1,30 @@
+.transacciones {
+  margin-top: 2rem;
+}
+
+.card-header h2,
+.card-header h3 {
+  font-weight: 600;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.bitacora-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.bitacora-item {
+  padding: 0.75rem;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  background-color: #fafafa;
+}
+
+.alert {
+  transition: opacity 0.3s ease;
+}
