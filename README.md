@@ -10,13 +10,19 @@ Sistema para gestionar cuentas contables y generar balances generales.
 - Interfaz web con Angular
 - API REST con Spring Boot
 - Base de datos MySQL
+- Autenticación con registro e inicio de sesión
 
 ## Novedades de esta iteración
 - Se implementó un **módulo de transacciones** que actualiza los saldos de las cuentas en tiempo real.
 - Cada transacción captura automáticamente el identificador y la IP del nodo que la procesó.
 - Se agregó una **bitácora histórica** para auditar la distribución del tráfico entre nodos en ambientes con balanceador de carga.
 - El frontend incluye un panel para registrar transacciones y visualizar la bitácora por nodo.
+- Nuevo módulo de autenticación con registro y login que expone endpoints REST y una interfaz Angular para gestionar sesiones.
 - Nueva documentación de despliegue multinstancia disponible en [`docs/deployment-nodos.md`](docs/deployment-nodos.md).
+
+## Credenciales por defecto
+- Usuario: `admin`
+- Contraseña: `admin123`
 
 ## Escenario del ciclo contable
 - Empresa de referencia: **Almacén «El Planeador»**, propiedad de Horacio Porras. Inicia operaciones el 1 de enero de 2024 como MIPYME dedicada a la compra y venta de mercaderías.
