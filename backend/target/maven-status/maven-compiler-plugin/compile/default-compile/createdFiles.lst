@@ -1,0 +1,10 @@
+com\sistemacontable\controller\BalanceGeneralController.class
+com\sistemacontable\model\Usuario.class
+com\sistemacontable\service\BalanceGeneralService.class
+com\sistemacontable\model\MovimientoContable.class
+com\sistemacontable\SistemaContableApplication.class
+com\sistemacontable\config\SecurityConfig.class
+com\sistemacontable\model\TipoCuenta.class
+com\sistemacontable\repository\CuentaRepository.class
+com\sistemacontable\model\Cuenta.class
+com\sistemacontable\repository\MovimientoRepository.class

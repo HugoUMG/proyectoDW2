@@ -1,0 +1,84 @@
+
+<div class="container mt-4">
+  <h2>Balance General</h2>
+  
+  <div class="row">
+    <!-- Activos -->
+    <div class="col-md-6">
+      <h4>Activos</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cuenta</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let activo of balance.activos"> <!-- ✅ balance.activos -->
+            <td>{{activo.codigo}} - {{activo.nombre}}</td>
+            <td>{{activo.saldo | currency}}</td>
+          </tr>
+          <tr class="table-primary">
+            <td><strong>Total Activos</strong></td>
+            <td><strong>{{balance.totalActivos | currency}}</strong></td> <!-- ✅ balance.totalActivos -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pasivos y Patrimonio -->
+    <div class="col-md-6">
+      <h4>Pasivos</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cuenta</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pasivo of balance.pasivos"> <!-- ✅ balance.pasivos (NO passivos) -->
+            <td>{{pasivo.codigo}} - {{pasivo.nombre}}</td>
+            <td>{{pasivo.saldo | currency}}</td>
+          </tr>
+          <tr class="table-primary">
+            <td><strong>Total Pasivos</strong></td>
+            <td><strong>{{balance.totalPasivos | currency}}</strong></td> <!-- ✅ balance.totalPasivos -->
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Patrimonio</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cuenta</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patrimonio of balance.patrimonio"> <!-- ✅ balance.patrimonio -->
+            <td>{{patrimonio.codigo}} - {{patrimonio.nombre}}</td>
+            <td>{{patrimonio.saldo | currency}}</td>
+          </tr>
+          <tr class="table-primary">
+            <td><strong>Total Patrimonio</strong></td>
+            <td><strong>{{balance.totalPatrimonio | currency}}</strong></td> <!-- ✅ balance.totalPatrimonio -->
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <tr class="table-info">
+          <td><strong>Total Pasivos + Patrimonio</strong></td>
+          <td><strong>{{balance.totalPasivosPatrimonio | currency}}</strong></td> <!-- ✅ balance.totalPasivosPatrimonio -->
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="alert" [class.alert-success]="balance.balanceVerificado" 
+                   [class.alert-danger]="!balance.balanceVerificado">
+    El balance {{balance.balanceVerificado ? 'está' : 'NO está'}} cuadrado.
+  </div>
+</div>
