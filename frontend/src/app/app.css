@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  background: #0b1120;
+  min-height: 100vh;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+h1 {
+  color: #f8fafc;
+}
