@@ -9,7 +9,7 @@ Sistema para gestionar cuentas contables y generar balances generales.
 - Generación de balance general
 - Interfaz web con Angular
 - API REST con Spring Boot
-- Base de datos MySQL
+- Base de datos H2 embebida
 - Autenticación con registro e inicio de sesión
 
 ## Novedades de esta iteración
