@@ -1,0 +1,128 @@
+<section class="transacciones">
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h5 mb-0">Registro de transacciones</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="registrarTransaccion()" #form="ngForm">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-4">
+            <label for="cuenta" class="form-label">Cuenta</label>
+            <select
+              id="cuenta"
+              class="form-select"
+              name="cuenta"
+              required
+              [(ngModel)]="nuevaTransaccion.cuentaId">
+              <option *ngFor="let cuenta of cuentas" [value]="cuenta.id">
+                {{ cuenta.codigo }} - {{ cuenta.nombre }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input
+              id="descripcion"
+              type="text"
+              class="form-control"
+              name="descripcion"
+              required
+              [(ngModel)]="nuevaTransaccion.descripcion"
+              placeholder="Detalle de la transacción" />
+          </div>
+          <div class="col-md-3">
+            <label for="monto" class="form-label">Monto</label>
+            <input
+              id="monto"
+              type="number"
+              step="0.01"
+              class="form-control"
+              name="monto"
+              required
+              [(ngModel)]="nuevaTransaccion.monto"
+              placeholder="0.00" />
+          </div>
+          <div class="col-md-1 text-end">
+            <button class="btn btn-primary" type="submit" [disabled]="form.invalid || cargando">
+              {{ cargando ? 'Guardando...' : 'Registrar' }}
+            </button>
+          </div>
+        </div>
+      </form>
+      <div
+        *ngIf="mensajeEstado"
+        class="alert mt-3"
+        [ngClass]="{ 'alert-success': tipoMensaje === 'success', 'alert-danger': tipoMensaje === 'error' }"
+      >
+        {{ mensajeEstado }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-light">
+          <h3 class="h6 mb-0">Transacciones registradas</h3>
+        </div>
+        <div class="card-body">
+          <div *ngIf="transacciones.length === 0" class="text-muted">No hay transacciones registradas.</div>
+          <div class="table-responsive" *ngIf="transacciones.length > 0">
+            <table class="table table-sm align-middle">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Cuenta</th>
+                  <th>Descripción</th>
+                  <th class="text-end">Monto</th>
+                  <th>Nodo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let transaccion of transacciones">
+                  <td>{{ transaccion.fecha | date:'short' }}</td>
+                  <td>
+                    <div class="fw-semibold">{{ transaccion.cuenta.nombre }}</div>
+                    <small class="text-muted">{{ transaccion.cuenta.codigo }}</small>
+                  </td>
+                  <td>{{ transaccion.descripcion }}</td>
+                  <td
+                    class="text-end"
+                    [ngClass]="{ 'text-success': transaccion.monto >= 0, 'text-danger': transaccion.monto < 0 }"
+                  >
+                    {{ transaccion.monto | number:'1.2-2' }}
+                  </td>
+                  <td>
+                    <div>{{ transaccion.nodoId }}</div>
+                    <small class="text-muted">{{ transaccion.nodoIp }}</small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-light">
+          <h3 class="h6 mb-0">Bitácora de nodos</h3>
+        </div>
+        <div class="card-body">
+          <div *ngIf="bitacora.length === 0" class="text-muted">Aún no hay registros en la bitácora.</div>
+          <div class="bitacora-list" *ngIf="bitacora.length > 0">
+            <div class="bitacora-item" *ngFor="let item of bitacora">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong>{{ item.nodoId }}</strong>
+                <span class="text-muted">{{ item.fechaRegistro | date:'short' }}</span>
+              </div>
+              <div class="text-muted small">IP: {{ item.nodoIp }}</div>
+              <div class="small">{{ item.detalle }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

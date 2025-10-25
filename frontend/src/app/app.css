@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  background: #0b1120;
+  min-height: 100vh;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+h1 {
+  color: #f8fafc;
+}
+
+.alerta-inicio {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px dashed rgba(59, 130, 246, 0.5);
+  border-radius: 12px;
+  color: #e2e8f0;
+  margin-top: 16px;
+  padding: 18px 24px;
+  text-align: center;
+}

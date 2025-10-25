@@ -1,8 +1,16 @@
 <div class="container">
   <h1 class="text-center my-4">🏢 Sistema Contable</h1>
-  
-  <!-- ELIMINAR esta línea -->
-  <!-- <app-registro-transaccion></app-registro-transaccion> -->
-  
-  <app-balance-general></app-balance-general>
+
+  <app-login></app-login>
+
+  <ng-container *ngIf="usuarioAutenticado; else debeIniciarSesion">
+    <app-transacciones></app-transacciones>
+    <app-balance-general></app-balance-general>
+  </ng-container>
+
+  <ng-template #debeIniciarSesion>
+    <div class="alerta-inicio">
+      <p>Inicia sesión para acceder a los módulos contables.</p>
+    </div>
+  </ng-template>
 </div>

@@ -1,0 +1,142 @@
+:host {
+  display: block;
+  color: #e8f1ff;
+  background: radial-gradient(circle at top left, rgba(44, 130, 201, 0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(30, 180, 160, 0.25), transparent 60%),
+              #0f172a;
+  padding: 3rem 1.5rem;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.45);
+  margin-bottom: 2rem;
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p,
+li,
+span {
+  color: rgba(232, 241, 255, 0.9);
+  line-height: 1.6;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.hero__text {
+  background: rgba(15, 23, 42, 0.35);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hero__balances {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.45), rgba(14, 165, 233, 0.3));
+  padding: 1.75rem;
+  border-radius: 16px;
+  box-shadow: inset 0 0 40px rgba(15, 23, 42, 0.4);
+}
+
+.hero__balances h3 {
+  margin-bottom: 1rem;
+}
+
+.hero__balances ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hero__balances li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.05rem;
+  background: rgba(15, 23, 42, 0.35);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.hero__balances strong {
+  font-size: 1.1rem;
+  color: #f8fafc;
+}
+
+.movimientos__grid,
+.libros__grid,
+.estados__grid,
+.extras__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.mov-card,
+.libros__grid article,
+.estados__grid article,
+.extras__grid article {
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mov-card:hover,
+.libros__grid article:hover,
+.estados__grid article:hover,
+.extras__grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.45);
+}
+
+.movimientos__nota,
+.estados__nota {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.libros__grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.estados__grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.movimientos__grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.extras__grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.extras__highlight {
+  border: 1px solid rgba(250, 204, 21, 0.75);
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(251, 191, 36, 0.05));
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 2fr 1fr;
+  }
+}
