@@ -121,9 +121,7 @@ Sistema para gestionar cuentas contables y generar balances generales.
 - **Extras proyectados para MIPYMES:** módulos de inventario, bancos y caja, clientes y proveedores, reportes descargables y perfiles multiusuario.
 
 ## Integrantes del Proyecto
-- [Nombre del integrante 1]
-- [Nombre del integrante 2]
-- [Nombre del integrante 3]
-
-## Repositorio
-- URL: [URL del repositorio GitHub]
+HUGO EMMANUEL RIVERA GUZMAN - 1490-22-16766
+ALFREDO JOSELITO VICENTE GARCIA 1490-22-13637
+BEATRÍZ VICENTE JIMÉNEZ, 1490-16-2739
+BOANERGES ISRAEL OCHOA MARROQUIN 1490-17-14754
